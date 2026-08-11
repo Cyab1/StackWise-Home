@@ -1,0 +1,119 @@
+.scale {
+  background: var(--bg-white);
+  padding: var(--section-pad) 0;
+  border-bottom: 1px solid #ECEFED;
+}
+
+.scale__head {
+  max-width: 620px;
+  margin-bottom: 52px;
+}
+
+.scale__title {
+  font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+  color: var(--teal-deep);
+  margin-top: 14px;
+}
+
+.scale__sub {
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #5b6560;
+  max-width: 540px;
+}
+
+.scale__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.tier {
+  background: #ffffff;
+  border: 1px solid #ECEFED;
+  border-radius: var(--radius);
+  padding: 30px 28px 28px;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.tier:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(8, 80, 65, 0.08);
+}
+
+.tier__scale-track {
+  height: 4px;
+  border-radius: 4px;
+  background: #EAF3EF;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+.tier__scale-fill {
+  height: 100%;
+  background: var(--tier-accent);
+  border-radius: 4px;
+  transition: width 0.6s var(--ease);
+}
+
+.tier__context {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tier-accent);
+}
+
+.tier__label {
+  font-size: 19px;
+  color: var(--ink);
+  margin-top: 8px;
+}
+
+.tier__metric {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px dashed #E4E9E6;
+}
+
+.tier__metric-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--tier-accent);
+  align-self: center;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tier-accent) 22%, transparent);
+  flex-shrink: 0;
+}
+
+.tier__metric-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 26px;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  min-width: 2.5ch;
+}
+
+.tier__metric-label {
+  font-size: 13px;
+  color: #7c8781;
+  font-weight: 500;
+}
+
+.tier__note {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5b6560;
+}
+
+@media (max-width: 860px) {
+  .scale__grid {
+    grid-template-columns: 1fr;
+  }
+}
