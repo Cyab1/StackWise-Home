@@ -2,6 +2,23 @@ import { useState } from "react";
 import axios from "axios";
 import "./Home.css";
 
+const ANNOUNCEMENTS = [
+  {
+    date: "17 Oct 2026",
+    tag: "Launch",
+    title: "ShieldScan is live",
+    body: "Our free website security scanner is now live at shieldscan.stackwiseza.co.za — scan any SA business website and get a grade A–F in seconds.",
+    url: "https://shieldscan.stackwiseza.co.za",
+  },
+  {
+    date: "Oct 2026",
+    tag: "Milestone",
+    title: "StackWise officially registered",
+    body: "STACKWISE (Pty) Ltd is now a registered South African company — Reg. 2026/606439/07. Level 1 B-BBEE EME. 100% Black & Youth Owned.",
+    url: null,
+  },
+];
+
 const SERVICES = [
   {
     icon: "💻",
@@ -32,24 +49,27 @@ const SERVICES = [
 const PROJECTS = [
   {
     name: "ShieldScan",
-    desc: "Free website security scanner for SA businesses. Scan any URL, get a grade A–F, download a branded PDF report.",
+    desc: "Free website security scanner for SA businesses. Scan any URL, get a grade A–F, download a branded PDF report. Built with Python, Flask, React, and ReportLab. Deployed on Render and Vercel.",
     url: "https://shieldscan.stackwiseza.co.za",
     tag: "Live · Free",
     icon: "🛡️",
+    stats: ["10 security checks", "Grade A–F", "PDF export", "Shareable links"],
   },
   {
     name: "SecureTask",
-    desc: "Project management tool with role-based access control and audit logging built in from day one.",
+    desc: "Project management tool with role-based access control and audit logging built in from day one. Designed for teams that need accountability and traceability built into their workflow.",
     url: "https://github.com/Cyab1",
     tag: "Live",
     icon: "✅",
+    stats: ["Role-based access", "Audit logging", "Full-stack", "REST API"],
   },
   {
     name: "VaultAPI",
-    desc: "Secure REST API boilerplate with JWT authentication, rate limiting, and structured logging.",
+    desc: "Secure REST API boilerplate with JWT authentication, rate limiting, and structured logging. A production-ready foundation for any backend project.",
     url: "https://github.com/Cyab1",
     tag: "Live",
     icon: "🔐",
+    stats: ["JWT auth", "Rate limiting", "Structured logging", "Python"],
   },
 ];
 
@@ -108,7 +128,7 @@ export default function Home() {
       });
     } catch {
       setStatus(
-        "Something went wrong. Please email us directly at stackwiseza@gmail.com",
+        "Something went wrong. Please email us directly at hello@stackwiseza.co.za",
       );
     } finally {
       setSending(false);
@@ -145,6 +165,7 @@ export default function Home() {
             <span className="nav-name">StackWise</span>
           </a>
           <div className="nav-links">
+            <a href="#announcements">Updates</a>
             <a href="#services">Services</a>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
@@ -192,6 +213,36 @@ export default function Home() {
               <span key={c} className="cred-chip">
                 {c}
               </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Announcements ── */}
+      <section className="section section-bg" id="announcements">
+        <div className="container">
+          <p className="section-label">Latest updates</p>
+          <h2 className="section-title">What's happening at StackWise.</h2>
+          <div className="announcements-grid">
+            {ANNOUNCEMENTS.map((a) => (
+              <div className="announcement-card" key={a.title}>
+                <div className="announcement-top">
+                  <span className="announcement-tag">{a.tag}</span>
+                  <span className="announcement-date">{a.date}</span>
+                </div>
+                <h3 className="announcement-title">{a.title}</h3>
+                <p className="announcement-body">{a.body}</p>
+                {a.url && (
+                  <a
+                    href={a.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="announcement-link"
+                  >
+                    View →
+                  </a>
+                )}
+              </div>
             ))}
           </div>
         </div>
@@ -294,6 +345,13 @@ export default function Home() {
                 </div>
                 <h3 className="project-name">{p.name}</h3>
                 <p className="project-desc">{p.desc}</p>
+                <div className="project-stats">
+                  {p.stats.map((s) => (
+                    <span key={s} className="project-stat-chip">
+                      {s}
+                    </span>
+                  ))}
+                </div>
                 <a
                   href={p.url}
                   target="_blank"
@@ -319,8 +377,11 @@ export default function Home() {
               need to ship next.
             </p>
             <div className="contact-details">
-              <a href="mailto:stackwiseza@gmail.com" className="contact-email">
-                stackwiseza@gmail.com
+              <a
+                href="mailto:hello@stackwiseza.co.za"
+                className="contact-email"
+              >
+                hello@stackwiseza.co.za
               </a>
               <p className="contact-loc">
                 Johannesburg, Gauteng · Remote worldwide
@@ -458,6 +519,7 @@ export default function Home() {
           <div className="footer-links">
             <div className="footer-col">
               <p className="footer-col-title">Navigate</p>
+              <a href="#announcements">Updates</a>
               <a href="#services">Services</a>
               <a href="#about">About</a>
               <a href="#projects">Projects</a>
@@ -466,6 +528,7 @@ export default function Home() {
             <div className="footer-col">
               <p className="footer-col-title">Legal</p>
               <a href="/privacy">Privacy Policy</a>
+              <a href="/paia">PAIA Manual</a>
             </div>
             <div className="footer-col">
               <p className="footer-col-title">Connect</p>

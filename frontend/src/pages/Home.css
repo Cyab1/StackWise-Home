@@ -605,3 +605,85 @@
     gap: 24px;
   }
 }
+
+/* ── Announcements ── */
+.announcements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.announcement-card {
+  background: var(--sw-white);
+  border: 1px solid var(--sw-border);
+  border-left: 4px solid var(--sw-green);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.announcement-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.announcement-tag {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--sw-teal-light);
+  color: var(--sw-dark);
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+.announcement-date {
+  font-size: 12px;
+  color: var(--sw-text-muted);
+}
+
+.announcement-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--sw-dark);
+}
+
+.announcement-body {
+  font-size: 14px;
+  color: var(--sw-text-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.announcement-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sw-green);
+  text-decoration: none;
+}
+
+.announcement-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Project stat chips ── */
+.project-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.project-stat-chip {
+  font-size: 11px;
+  background: var(--sw-teal-light);
+  color: var(--sw-dark);
+  border: 1px solid var(--sw-border);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
