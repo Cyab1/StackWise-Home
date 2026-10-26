@@ -61,6 +61,9 @@ export default function Navbar() {
           <Link to="/about" className={isActive("/about") ? "active" : ""}>
             About
           </Link>
+          <Link to="/news" className={isActive("/news") ? "active" : ""}>
+            News
+          </Link>
           <Link to="/contact" className={isActive("/contact") ? "active" : ""}>
             Contact
           </Link>

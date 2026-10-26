@@ -80,6 +80,7 @@ export default function Footer() {
         <div className="footer-links">
           <div className="footer-col">
             <p className="footer-col-title">Navigate</p>
+            <Link to="/news">News & Updates</Link>
             <Link to="/">Home</Link>
             <Link to="/services">Services</Link>
             <Link to="/about">About</Link>
