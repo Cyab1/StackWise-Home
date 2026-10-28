@@ -269,3 +269,19 @@
     position: static;
   }
 }
+
+.news-loading {
+  color: var(--sw-text-muted);
+  font-size: 15px;
+  padding: 40px 0;
+}
+.news-error {
+  color: #dc2626;
+  font-size: 15px;
+  padding: 40px 0;
+}
+.news-empty {
+  color: var(--sw-text-muted);
+  font-size: 15px;
+  padding: 40px 0;
+}

@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import News from './pages/News'
+import NewsAdmin from './pages/NewsAdmin'
 import Paia from "./pages/Paia";
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/news" element={<News />} />
+        <Route path="/news/admin" element={<NewsAdmin />} />
         <Route path="/paia" element={<Paia />} />
       </Routes>
       <Footer />
